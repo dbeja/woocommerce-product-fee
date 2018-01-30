@@ -9,8 +9,9 @@ Author URI:   https://codeable.io/
 */
 
 if ( !class_exists( 'CProductFee' ) ) {
-	define('CPRODUCTFEE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
-	define('CPRODUCTFEE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+	define( 'CPRODUCTFEE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+	define( 'CPRODUCTFEE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
+	define( 'CPRODUCTFEE_TEXT_DOMAIN', 'cproductfee' );
 
 	class CProductFee {
 
@@ -20,10 +21,10 @@ if ( !class_exists( 'CProductFee' ) ) {
 			register_deactivation_hook( __FILE__, 'CProductFee::deactivate' );
 
 			if( is_admin() ) {
-				require_once( CPRODUCTFEE_PLUGIN_DIR . 'admin/product-fee-admin.php' );
+				require_once( CPRODUCTFEE_PLUGIN_DIR . 'admin/class-cproductfee-admin.php' );
 				$admin = new CProductFee_Admin();
 			} else {
-				require_once( CPRODUCTFEE_PLUGIN_DIR . 'public/product-fee-public.php' );
+				require_once( CPRODUCTFEE_PLUGIN_DIR . 'public/class-cproductfee-public.php' );
 				$public = new CProductFee_Public();
 			}
 		}

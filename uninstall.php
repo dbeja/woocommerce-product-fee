@@ -1,6 +1,11 @@
 <?php
+/**
+ * Codeable Product Fee uninstall
+ *
+ * @package    codeable-product-fee
+ */
 
-// if uninstall.php is not called by WordPress, die
-if (!defined('WP_UNINSTALL_PLUGIN')) {
-	die;
+// If uninstall not called from WordPress, then exit.
+if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
+	exit;
 }
